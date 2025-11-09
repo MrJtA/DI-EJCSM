@@ -1,0 +1,7 @@
+# Archivos de VS Code
+.vscode/
+# Aunque .vscode/ puede ser útil, a menudo es mejor ignorarlo y solo incluir archivos compartidos si es necesario.
+
+# Archivos de depuración y logs
+*.log
+*.swp
