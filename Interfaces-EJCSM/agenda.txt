@@ -1,3 +1,3 @@
-Versión 1.0
-- Completar GamePad
-- Seguir los apuntes de Gemini y Fabián
+Versión 1.1
+- Completar GamePad en lo funcional.
+- Seguir los apuntes de Gemini y Fabián.
