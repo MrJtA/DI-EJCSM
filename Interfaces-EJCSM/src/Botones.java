@@ -1,54 +1,84 @@
+import java.awt.event.*;
 import javax.swing.*;
 
-public class Botones {
+public class Botones extends JFrame {
+    
+    private int suma = 0;
 
-    private static int suma = 0;
+    private static class miBoton extends JButton {
+    
+        private String texto;
+    
+        public miBoton(String texto) {
+            this.texto = texto;
+        }
 
-    public static void main(String[] args) throws Exception {
+        public String getTexto() {
+            return this.texto;
+        }
+    
+    }
+
+    public Botones() {
         
-        // Crear ventana.
-        JFrame ventana = new JFrame("Ventana.");
+        setSize(800, 400);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Establecer título
-        // ventana.setTitle("Ventana");
-        
-        // Cerrar la ventana con el botón de cierre.
-        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Crear panel.
         JPanel panel = new JPanel();
-
-        // Crear etiqueta de texto.
-        JLabel etiqueta = new JLabel("Hola. Haz click en el botón de abajo. Este texto cambiará cuando se pulse el botón.");
-
-        // Crear botones.
-        JButton boton1 = new JButton("Pulsa aquí para cambiar el texto.");
-        boton1.addActionListener(e -> {
-            etiqueta.setText("El botón se ha pulsado 1.");
+        JLabel etiqueta = new JLabel("Hola. Pulsa un botón y se cambiará el texto");
+        
+        miBoton boton1 = new miBoton("Suma 1");
+        boton1.setText(boton1.getTexto());
+        boton1.addActionListener( e -> {
+            this.suma += 1;
+            etiqueta.setText(String.valueOf(this.suma));
         });
-        JButton boton2 = new JButton("Pulsa aquí para sumar 1.");
-        boton2.addActionListener(e -> {
-            suma = suma+1;
-            etiqueta.setText(String.valueOf(suma));
+
+        miBoton boton2 = new miBoton("2");
+        boton2.setText(boton2.getTexto());
+        boton2.addActionListener( e -> {
+            etiqueta.setText("Has pulsado el dos.");
+        });
+
+        miBoton boton3 = new miBoton("Presiona una tecla");
+        boton3.addActionListener(e -> {
+            etiqueta.setText(boton3.getTexto());
+        });
+        boton3.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyChar() == 'e' || e.getKeyChar() == 'E') {
+                    etiqueta.setText("E");
+                }
+            }
+        });
+
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // Mostrar la tecla presionada
+                etiqueta.setText(String.valueOf(e.getKeyChar()));
+            }
         });
 
         // Añadir los componentes.
         panel.add(etiqueta);
         panel.add(boton1);
         panel.add(boton2);
-        ventana.add(panel);
+        panel.add(boton3);
+        add(panel);
+        setVisible(true);
+        setFocusable(true);
+        requestFocusInWindow();
 
-        // Ajustar tamaño de la ventana.
-        ventana.setSize(800, 400);
+    }
 
-        // Poner la ventana en el centro.
-        ventana.setLocationRelativeTo(null);
-
-        // Ajustar tamaño de la ventana a los componentes.
-        // ventana.pack();
-
-        // Hacer la ventana visible (siempre al final).
-        ventana.setVisible(true);
+    public static void main(String[] args) {
+        
+        SwingUtilities.invokeLater(() -> {
+            new Botones();
+        });
 
     }
     
