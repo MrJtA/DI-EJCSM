@@ -17,7 +17,7 @@ public class LayoutFlotantes extends JFrame {
         GridBagConstraints gbc = new GridBagConstraints();
         // Añade espacio alrededor de cada componente
         gbc.insets = new Insets(5, 5, 5, 5);
-
+ 
         // Crear componentes
         JLabel usuario = new JLabel("Usuario:");
         JTextField entradaUsuario = new JTextField(10);
@@ -32,6 +32,7 @@ public class LayoutFlotantes extends JFrame {
         gbc.weightx = 0;     // No queremos que las etiquetas estiren la columna
         panel.add(usuario, gbc);
 
+        // --- Componente 2: Etiqueta "Usuario" (Columna 0, Fila 0) ---
         gbc.gridx = 1;       // Columna 1
         gbc.gridy = 0;       // Fila 0
         gbc.weightx = 1.0;   // ¡Esta columna puede estirarse!

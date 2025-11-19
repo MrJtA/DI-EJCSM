@@ -5,13 +5,15 @@ import javax.swing.border.EmptyBorder;
 public class GamePad extends JFrame {
 
     private static class miPanel extends JPanel {
+
         miPanel() {
             this.setBackground(new Color(240, 240, 240));
         }
+
     }
 
     private static class miBoton extends JButton {
-        
+
         private static final Dimension FIXED_SIZE = new Dimension(60, 60);
 
         public miBoton(String texto, JTextField pantalla) {
@@ -39,22 +41,24 @@ public class GamePad extends JFrame {
         public Dimension getMaximumSize() {
             return FIXED_SIZE;
         }
+
     }
     
     public GamePad() {
+
         super("GamePad");
         this.setSize(640, 480);
         this.setLayout(new BorderLayout());
         miPanel panelCentral = new miPanel();
         panelCentral.setLayout(new GridBagLayout());
-        panelCentral.setBackground(new Color(30, 30, 30));
+        panelCentral.setBackground(new Color(250, 250, 250));
 
         JTextField textoCentral = new JTextField();
         textoCentral.setHorizontalAlignment(JTextField.CENTER);
         textoCentral.setText("PANTALLA VIDEOJUEGO");
         textoCentral.setEditable(false);
-        textoCentral.setForeground(Color.WHITE);
-        textoCentral.setBackground(new Color(50, 50, 50));
+        textoCentral.setForeground(Color.BLACK);
+        textoCentral.setBackground(new Color(250, 250, 250));
         textoCentral.setPreferredSize(new Dimension(200, 30));
         panelCentral.add(textoCentral);
 
@@ -115,11 +119,14 @@ public class GamePad extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+        
     }
 
     public static void main(String[] args) {
+
         SwingUtilities.invokeLater(() -> {
             new GamePad();
         });
+        
     }
 }
