@@ -1,50 +1,12 @@
+package GamePad;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
-public class GamePad extends JFrame {
-
-    private static class miPanel extends JPanel {
-
-        miPanel() {
-            this.setBackground(new Color(240, 240, 240));
-        }
-
-    }
-
-    private static class miBoton extends JButton {
-
-        private static final Dimension FIXED_SIZE = new Dimension(60, 60);
-
-        public miBoton(String texto, JTextField pantalla) {
-            super(texto);
-            setBackground(new Color(34, 113, 179));
-            setForeground(Color.WHITE); 
-            setFocusPainted(false);
-            setAlignmentX(CENTER_ALIGNMENT);
-            addActionListener(e -> {
-                pantalla.setText(texto);
-            });
-        }
-
-        @Override
-        public Dimension getPreferredSize() {
-            return FIXED_SIZE;
-        }
-
-        @Override
-        public Dimension getMinimumSize() {
-            return FIXED_SIZE;
-        }
-
-        @Override
-        public Dimension getMaximumSize() {
-            return FIXED_SIZE;
-        }
-
-    }
+public class miVentana extends JFrame {
     
-    public GamePad() {
+    public miVentana() {
 
         super("GamePad");
         this.setSize(640, 480);
@@ -125,7 +87,7 @@ public class GamePad extends JFrame {
     public static void main(String[] args) {
 
         SwingUtilities.invokeLater(() -> {
-            new GamePad();
+            new miVentana();
         });
         
     }
