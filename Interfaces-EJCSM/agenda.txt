@@ -1,3 +1,0 @@
-Versión 1.2
-- Completar GamePad en lo funcional.
-- Seguir los apuntes de Gemini y Fabián.
