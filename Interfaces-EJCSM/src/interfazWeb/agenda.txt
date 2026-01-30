@@ -1,4 +1,3 @@
-- arreglar el menu
 - arreglar marcas repetidas menuBar
 - mover xmls e imagenes
 - completar todo

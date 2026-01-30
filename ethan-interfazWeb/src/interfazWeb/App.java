@@ -3,6 +3,7 @@ package interfazWeb;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.Border;
 
 class menuBar extends JMenuBar {
 
@@ -123,6 +124,8 @@ public class App extends JFrame {
 
         String nombreUsuario = "";
         JLabel bienvenido = new JLabel("Bienvenido, " + nombreUsuario, SwingConstants.CENTER);
+        bienvenido.setFont(new Font("Calibri", Font.BOLD, 20));
+        bienvenido.setHorizontalAlignment(JLabel.CENTER);
 
         header.add(mensaje);
         header.add(intermedio);
@@ -132,6 +135,24 @@ public class App extends JFrame {
 
         JPanel cuerpo = new JPanel();
         cuerpo.setBackground(new Color(255, 255, 255));
+        cuerpo.setLayout(new BorderLayout());
+
+        JLabel nuestrasCategorias = new JLabel("Nuestras categorías", SwingConstants.CENTER);
+        cuerpo.add(nuestrasCategorias, BorderLayout.NORTH);
+        nuestrasCategorias.setFont(new Font("Calibri", Font.BOLD, 20));
+        nuestrasCategorias.setHorizontalAlignment(JLabel.CENTER);
+
+        JPanel panelIzquierdoRelleno = new JPanel();
+        panelIzquierdoRelleno.setPreferredSize(new Dimension(0, 100));
+        cuerpo.add(panelIzquierdoRelleno, BorderLayout.WEST);
+        JPanel panelDerechoRelleno = new JPanel();
+        cuerpo.add(panelDerechoRelleno, BorderLayout.EAST);
+        panelIzquierdoRelleno.setPreferredSize(new Dimension(0, 100));
+
+        JPanel contenido = new JPanel();
+        contenido.setLayout(new GridLayout(2, 2));
+        cuerpo.add(contenido, BorderLayout.CENTER);
+
 
 
         JPanel panelMenu = new JPanel();
