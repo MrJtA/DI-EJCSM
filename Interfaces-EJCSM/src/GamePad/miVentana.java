@@ -13,7 +13,7 @@ public class miVentana extends JFrame {
         this.setLayout(new BorderLayout());
         miPanel panelCentral = new miPanel();
         panelCentral.setLayout(new GridBagLayout());
-        panelCentral.setBackground(new Color(250, 250, 250));
+        panelCentral.setBackground(new Color(255, 255, 255));
 
         JTextField textoCentral = new JTextField();
         textoCentral.setHorizontalAlignment(JTextField.CENTER);
