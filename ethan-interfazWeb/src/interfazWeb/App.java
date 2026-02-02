@@ -3,7 +3,6 @@ package interfazWeb;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.Border;
 
 class menuBar extends JMenuBar {
 
@@ -64,6 +63,10 @@ class menuBar extends JMenuBar {
 class miBoton extends JButton {
 
     public miBoton(String nombre, String rutaImagen) {
+        this(nombre, rutaImagen, SwingConstants.RIGHT, 30);
+    }
+
+    public miBoton(String nombre, String rutaImagen, int posicionTexto, int tamanoIcono) {
         super(nombre);
         this.setContentAreaFilled(false);
         this.setBorderPainted(false);
@@ -72,24 +75,33 @@ class miBoton extends JButton {
         this.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.setFont(new Font("Calibri", Font.PLAIN, 14));
         this.setIconTextGap(10);
-        this.setHorizontalTextPosition(SwingConstants.RIGHT);
-        this.setVerticalTextPosition(SwingConstants.CENTER);
+
+        // CORRECCIÓN DEL ERROR:
+        if (posicionTexto == SwingConstants.BOTTOM) {
+            // Para que el texto esté DEBAJO, el centro horizontal debe ser CENTER
+            this.setHorizontalTextPosition(SwingConstants.CENTER); 
+            this.setVerticalTextPosition(SwingConstants.BOTTOM);
+        } else {
+            // Para el resto (como el menú), texto a la derecha
+            this.setHorizontalTextPosition(SwingConstants.RIGHT);
+            this.setVerticalTextPosition(SwingConstants.CENTER);
+        }
+
         if (rutaImagen != null && !rutaImagen.isEmpty()) {
-            this.setIcon(generarIcono(rutaImagen));
+            this.setIcon(generarIcono(rutaImagen, tamanoIcono));
         }
     }
 
-    private ImageIcon generarIcono(String rutaImagen) {
+    private ImageIcon generarIcono(String rutaImagen, int tamano) {
         try {
             ImageIcon iconoOriginal = new ImageIcon(rutaImagen);
-            Image img = iconoOriginal.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+            Image img = iconoOriginal.getImage().getScaledInstance(tamano, tamano, Image.SCALE_SMOOTH);
             return new ImageIcon(img);
         } catch (Exception e) {
             System.err.println("Error al cargar: " + rutaImagen);
             return null;
         }
     }
-
 }
 
 public class App extends JFrame {
@@ -142,16 +154,17 @@ public class App extends JFrame {
         nuestrasCategorias.setFont(new Font("Calibri", Font.BOLD, 20));
         nuestrasCategorias.setHorizontalAlignment(JLabel.CENTER);
 
-        JPanel panelIzquierdoRelleno = new JPanel();
-        panelIzquierdoRelleno.setPreferredSize(new Dimension(0, 100));
-        cuerpo.add(panelIzquierdoRelleno, BorderLayout.WEST);
-        JPanel panelDerechoRelleno = new JPanel();
-        cuerpo.add(panelDerechoRelleno, BorderLayout.EAST);
-        panelIzquierdoRelleno.setPreferredSize(new Dimension(0, 100));
-
         JPanel contenido = new JPanel();
         contenido.setLayout(new GridLayout(2, 2));
         cuerpo.add(contenido, BorderLayout.CENTER);
+        miBoton guitarraEspañola = new miBoton("Guitarras Españolas", "src/images/guitarra_española.png", SwingConstants.BOTTOM, 200);
+        miBoton guitarraElectrica = new miBoton("Guitarras Eléctricas", "src/images/guitarra_electrica.png", SwingConstants.BOTTOM, 200);
+        miBoton guitarraElectroacustica = new miBoton("Guitarras Electroacústicas", "src/images/guitarra_electroacustica.png", SwingConstants.BOTTOM, 200);
+        miBoton pedales = new miBoton("Pedales de efecto", "src/images/pedales.png", SwingConstants.BOTTOM, 200);
+        contenido.add(guitarraEspañola);
+        contenido.add(guitarraElectrica);
+        contenido.add(guitarraElectroacustica);
+        contenido.add(pedales);
 
 
 
