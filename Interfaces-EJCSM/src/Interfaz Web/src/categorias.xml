@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<categorias>
+    <categoria>
+        <id>1</id>
+        <nombre>Guitarras Españolas</nombre>
+        <icono>src/images/guitarra_española.png</icono>
+        <marcas>
+            <marca>
+                <id>1</id>
+                <nombre>Alhambra</nombre>
+                <productos>
+                    <modelo>Alhambra 3C</modelo>
+                    <modelo>Alhambra 5P</modelo>
+                    <modelo>Alhambra 7PA</modelo>
+                </productos>
+            </marca>
+            <marca>
+                <id>4</id>
+                <nombre>Ibanez</nombre>
+                <productos>
+                    <modelo>Ibanez GA5TCE</modelo>
+                    <modelo>Ibanez GA3</modelo>
+                </productos>
+            </marca>
+            <marca>
+                <id>5</id>
+                <nombre>Yamaha</nombre>
+                <productos>
+                    <modelo>Yamaha C40 II</modelo>
+                    <modelo>Yamaha C80</modelo>
+                    <modelo>Yamaha CG122MS</modelo>
+                </productos>
+            </marca>
+        </marcas>   
+    </categoria>
+
+    <categoria>
+        <id>2</id>
+        <nombre>Guitarras Eléctricas</nombre>
+        <icono>src/images/guitarra_electrica.png</icono>
+        <marcas>
+            <marca>
+                <id>2</id>
+                <nombre>Fender</nombre>
+                <productos>
+                    <modelo>Stratocaster Player Series</modelo>
+                    <modelo>Telecaster American Professional II</modelo>
+                </productos>
+            </marca>
+            <marca>
+                <id>3</id>
+                <nombre>Gibson</nombre>
+                <productos>
+                    <modelo>Les Paul Standard '60s</modelo>
+                    <modelo>SG Standard</modelo>
+                    <modelo>Flying V</modelo>
+                </productos>
+            </marca>
+            <marca>
+                <id>4</id>
+                <nombre>Ibanez</nombre>
+                <productos>
+                    <modelo>RG421-MOL</modelo>
+                    <modelo>Steve Vai JEM7VP</modelo>
+                </productos>
+            </marca>
+            <marca>
+                <id>5</id>
+                <nombre>Yamaha</nombre>
+                <productos>
+                    <modelo>Yamaha Pacifica 112V</modelo>
+                    <modelo>Yamaha Revstar Element</modelo>
+                </productos>
+            </marca>
+        </marcas>   
+    </categoria>
+
+    <categoria>
+        <id>3</id>
+        <nombre>Guitarras Electroacústicas</nombre>
+        <icono>src/images/guitarra_electroacustica.png</icono>
+        <marcas>
+            <marca>
+                <id>2</id>
+                <nombre>Fender</nombre>
+                <productos>
+                    <modelo>Fender CD-60SCE</modelo>
+                    <modelo>Fender Newporter Player</modelo>
+                </productos>
+            </marca>
+            <marca>
+                <id>3</id>
+                <nombre>Gibson</nombre>
+                <productos>
+                    <modelo>Gibson J-45 Standard</modelo>
+                    <modelo>Gibson Hummingbird</modelo>
+                </productos>
+            </marca>
+            <marca>
+                <id>4</id>
+                <nombre>Ibanez</nombre>
+                <productos>
+                    <modelo>Ibanez V50NJP</modelo>
+                    <modelo>Ibanez AW54CE</modelo>
+                </productos>
+            </marca>
+            <marca>
+                <id>5</id>
+                <nombre>Yamaha</nombre>
+                <productos>
+                    <modelo>Yamaha APX600</modelo>
+                    <modelo>Yamaha CPX700II</modelo>
+                    <modelo>Yamaha FGX800C</modelo>
+                </productos>
+            </marca>
+        </marcas>   
+    </categoria>
+
+    <categoria>
+        <id>4</id>
+        <nombre>Pedales de Efectos</nombre>
+        <icono>src/images/pedales.png</icono>
+        <marcas>
+            <marca>
+                <id>1</id>
+                <nombre>Boss</nombre>
+                <productos>
+                    <modelo>Boss DS-1 Distortion</modelo>
+                    <modelo>Boss RC-1 Loop Station</modelo>
+                    <modelo>Boss CH-1 Super Chorus</modelo>
+                </productos>
+            </marca>
+            <marca>
+                <id>2</id>
+                <nombre>Donner</nombre>
+                <productos>
+                    <modelo>Donner Yellow Fall Delay</modelo>
+                    <modelo>Donner Tutti Love Chorus</modelo>
+                </productos>
+            </marca>
+            <marca>
+                <id>3</id>
+                <nombre>Harmonix</nombre>
+                <productos>
+                    <modelo>Big Muff Pi</modelo>
+                    <modelo>Soul Food Overdrive</modelo>
+                </productos>
+            </marca>
+            <marca>
+                <id>4</id>
+                <nombre>Nux</nombre>
+                <productos>
+                    <modelo>Nux MG-300 Modeler</modelo>
+                    <modelo>Nux Horseman</modelo>
+                </productos>
+            </marca>
+        </marcas>
+    </categoria>
+</categorias>
