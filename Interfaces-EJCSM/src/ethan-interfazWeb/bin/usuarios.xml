@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usuarios>
+    <usuario>
+        <id>1</id>
+        <nombre>Jorge Massa</nombre>
+        <username>profesor</username>
+        <password>massa3P</password>
+    </usuario>
+    <usuario>
+        <id>2</id>
+        <nombre>Joaco</nombre>
+        <username>jtaa___</username>
+        <password>goku123</password>
+    </usuario>
+</usuarios>

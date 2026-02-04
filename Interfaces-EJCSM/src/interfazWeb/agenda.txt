@@ -1,3 +1,0 @@
-- arreglar marcas repetidas menuBar
-- mover xmls e imagenes
-- completar todo
